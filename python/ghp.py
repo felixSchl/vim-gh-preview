@@ -48,7 +48,11 @@ def push(stop_event, port, auto_open_browser, auto_start_server):
 
         connection = httplib.HTTPConnection('localhost', port, timeout=1)
         try:
-            connection.request('POST', '/input', data)
+            connection.request(
+                'POST',
+                '/api/doc/',
+                data,
+                { 'Content-Type': 'application/json' })
             connection.close()
             success = True
         except (socket.error, socket.timeout, httplib.HTTPException):
