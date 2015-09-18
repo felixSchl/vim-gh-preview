@@ -61,16 +61,16 @@ def push(stop_event, port, auto_open_browser, auto_start_server):
                and auto_start_server:
                 startupinfo = None
                 if sys.platform == 'win32':
-                    command = "gh-preview.cmd"
+                    command = 'gh-preview.cmd'
                     startupinfo = subprocess.STARTUPINFO()
                     startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
                     pipe = None
                 else:
-                    command = "gh-preview"
+                    command = 'gh-preview'
                     pipe = subprocess.PIPE
                 try:
                     ghp_process = subprocess.Popen(
-                        [command, port]
+                        [command, '--port=%s' % port]
                       , bufsize = 0
                       , startupinfo = startupinfo
                       , stdin = pipe

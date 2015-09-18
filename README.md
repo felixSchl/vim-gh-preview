@@ -1,7 +1,5 @@
 # Vim - Github Markdown Preview
 
-> :warning: **Pending `gh-preview@next` release** :warning:
-
 [![npm version](https://badge.fury.io/js/gh-preview.svg)](http://badge.fury.io/js/gh-preview)
 
 > Vim plugin for [gh-preview](https://github.com/felixschl/gh-preview), GFM
@@ -14,7 +12,7 @@
 Install and run [gh-preview](https://github.com/felixschl/gh-preview):
 
 ```
-$ npm install -g gh-preview
+$ npm install -g gh-preview@1.0.0-next
 $ gh-preview
 ```
 
