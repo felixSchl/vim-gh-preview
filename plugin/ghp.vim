@@ -1,7 +1,4 @@
-if !has('python')
-  echoerr 'Error: ghp requires Vim compiled with +python'
-  finish
-endif
+scriptencoding utf-8
 
 if exists('g:ghp_loaded')
   finish
@@ -9,10 +6,22 @@ endif
 
 let g:ghp_loaded = 1
 
-"Load python/ghp.py
+if !has('python')
+  echoerr 'Error: ghp requires Vim compiled with +python'
+  finish
+endif
+
+let s:save_cpo = &cpo
+set cpo&vim
+
+" Load python/ghp.py
 let s:py_path = join([expand('<sfile>:p:h:h'), 'python'], '/')
 exec "python sys.path.append(r'" . s:py_path . "')"
 exec "python import ghp"
+
+" ------------------------------------------------------------------------------
+" Global options definitions ---------------------------------------------------
+" ------------------------------------------------------------------------------
 
 " Default value for port
 let g:ghp_port = get(g:, 'ghp_port', 1234)
@@ -28,6 +37,10 @@ fu! s:dispose()
     call Ghp#Stop()
 endfu
 
+" ------------------------------------------------------------------------------
+" Auto-commands ----------------------------------------------------------------
+" ------------------------------------------------------------------------------
+"
 " Prepare a buffer for being previewed
 fu! s:initBuffer()
     call Ghp#Start()
@@ -43,3 +56,6 @@ aug ghp
     au FileType markdown call s:initBuffer()
     au VimLeave * call s:dispose()
 aug END
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
