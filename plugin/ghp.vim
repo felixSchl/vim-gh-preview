@@ -34,7 +34,7 @@ let g:ghp_open_browser = get(g:, 'ghp_open_browser', 1)
 
 " Perform disposal logic
 fu! s:dispose()
-    call Ghp#Stop()
+    call ghp#Stop()
 endfu
 
 " ------------------------------------------------------------------------------
@@ -43,11 +43,11 @@ endfu
 "
 " Prepare a buffer for being previewed
 fu! s:initBuffer()
-    call Ghp#Start()
+    call ghp#Start()
     aug ghp
         au! * <buffer>
-        au BufEnter <buffer> call Ghp#Preview()
-        au CursorHold,CursorHoldI,CursorMoved,CursorMovedI <buffer> call Ghp#Preview()
+        au BufEnter <buffer> call ghp#Preview()
+        au CursorHold,CursorHoldI,CursorMoved,CursorMovedI <buffer> call ghp#Preview()
     aug END
 endfu
 
