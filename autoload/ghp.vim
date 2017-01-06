@@ -5,15 +5,15 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-function! Ghp#Start() abort
+function! ghp#Start() abort
   python ghp.start()
 endfunction
 
-function! Ghp#Preview() abort
+function! ghp#Preview() abort
   python ghp.preview()
 endfunction
 
-function! Ghp#Stop() abort
+function! ghp#Stop() abort
   python ghp.stop()
 endfunction
 
