@@ -2,14 +2,14 @@
 
 [![npm version](https://badge.fury.io/js/gh-preview.svg)](http://badge.fury.io/js/gh-preview)
 
-> Vim plugin for [gh-preview](https://github.com/felixschl/gh-preview) &mdash;
+> Vim plugin for [gh-preview](https://github.com/felixSchl/gh-preview) &mdash;
 > Github markdown preview, as you type.
 
 ![preview](https://raw.githubusercontent.com/felixSchl/felixSchl.github.io/master/gh-preview/preview.gif)
 
 ## Getting started
 
-Install [gh-preview](https://github.com/felixschl/gh-preview):
+Install [gh-preview](https://github.com/felixSchl/gh-preview):
 
 ```
 $ npm install -g gh-preview@1.0.0-next
@@ -37,11 +37,11 @@ let g:ghp_port = 1234
 #### Installation - Plugged.vim
 
 ```vim
-Plug 'felixschl/vim-gh-preview'
+Plug 'felixSchl/vim-gh-preview'
 ```
 
 #### Installation - Vundle.vim
 
 ```vim
-Plugin 'felixschl/vim-gh-preview'
+Plugin 'felixSchl/vim-gh-preview'
 ```
